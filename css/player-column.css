@@ -1,0 +1,60 @@
+/* VIE DU JOUEUR*/
+.player-life {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    align-items: baseline;
+}
+
+#player1-life,
+#player2-life {
+    position: relative;
+    margin-left: 5px;
+    margin-right: 5px;
+    height: 8px;
+    border: 1px solid #000;
+    background-color: #000;
+    box-sizing: content-box;
+    border-radius: 5px;
+}
+
+#player1-life-bg,
+#player2-life-bg {
+    background-color: #d82101;
+    height: 100%;
+    width: 100%;
+}
+
+/* BOUTON DU COMBAT*/
+.battle-buttons {
+    margin-bottom: 40px;
+    justify-content: center;
+}
+
+.battle-button {
+    font-family: 'Goldman', cursive;
+    font-weight: bold;
+    font-size: 19px;
+    color: #000;
+    margin: 9px;
+    height: 60px;
+    width: 90px;
+    background: center url(../img/hacker-defend.png) no-repeat;
+    background-size: contain;
+    border: none;
+    visibility: hidden;
+}
+
+.battle-button:first-child {
+    background-image: url(../img/hacker-attack.png);
+}
+
+.battle-button:hover {
+    margin: 7px;
+    height: 64px;
+    width: 94px;
+    cursor: none;
+}
+
+.battle-button:focus {
+    outline: none;
+}

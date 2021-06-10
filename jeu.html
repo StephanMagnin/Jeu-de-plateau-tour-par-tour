@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <link rel="stylesheet" href="css/style.css" />
+        <link rel="stylesheet" href="css/player-column.css" />
+        <link rel="stylesheet" href="css/grid.css" />
+        <link rel="stylesheet" href="css/modal.css" />
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" />
+        <link href="https://fonts.googleapis.com/css2?family=Goldman&display=swap" rel="stylesheet">
+        <title>Dev Battle</title>
+    </head>
+    <body>
+        <!-- Pour l'effet de ma souris -->
+        <div class="cursor"></div>
+
+        <!-- HEADER -->
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col">
+                    <h1 class="mainTitle">Dev Battle</h1>
+                </div>
+            </div>
+        </div>
+            <!-- ZONE DE JEUX -->
+            <div class="row m-0">
+                <div class="player col-6 col-md-3 order-1 order-md-1">
+                    <div class="player-id">
+                        <h2>FrontBoy</h2>
+                        <img class="medium-size" src="img/player1.png" alt="Player 1 Leo" />
+                    </div>
+                    <div class="row player-life justify-content-center">
+                        <div class="col-4 p-0">
+                            <div id="player1-life">
+                                <div id="player1-life-bg"></div>
+                            </div>
+                        </div>
+                        <div class="col-4 p-0">
+                            <p class="text-left"><span id="player1-pts">100</span> pts</p>
+                        </div>
+                    </div>
+                    <div class="row battle-buttons">
+                        <button class="player1button battle-button">
+
+                        </button>
+                        <button class="player1button battle-button">
+
+                        </button>
+                    </div>
+                    <div class="player-weapon">
+                        <h3>Arme</h3>
+                        <img class="medium-size" src="img/knife.png" alt="Newbie Sword" />
+                        <h2 class="weapon-name">couteau</h2>
+                        <p>Dégât : <span id="damage-pts">10</span> pts</p>
+                    </div>
+                </div>
+                <div class="grid-container col-12 col-md-6 order-3 order-md-2">
+                    <div id="grid"></div>
+                </div>
+                <div class="player col-6 col-md-3 order-2 order-md-3">
+                    <div class="player-id">
+                        <h2>BackGirls</h2>
+                        <img class="medium-size" src="img/player2.png" alt="Player 2 Kanya" />
+                    </div>
+                    <div class="row player-life justify-content-center">
+                        <div class="col-4 p-0">
+                            <div id="player2-life">
+                                <div id="player2-life-bg"></div>
+                            </div>
+                        </div>
+                        <div class="col-4 p-0">
+                            <p class="text-left"><span id="player2-pts">100</span> pts</p>
+                        </div>
+                    </div>
+                    <div class="row battle-buttons">
+                        <button class="player2button battle-button">
+                        
+                        </button>
+                        <button class="player2button battle-button">
+                    
+                        </button>
+                    </div>
+                    <div class="player-weapon">
+                        <h3>Arme</h3>
+                        <img class="medium-size" src="img/knife.png" alt="Newbie Sword" />
+                        <h2 class="weapon-name">couteau</h2>
+                        <p>Dégât : <span id="damage-pts">10</span> pts</p>
+                    </div>
+                </div>
+                <!-- MODELE : COMMERCER LE COMBAT -->
+                <div class="modal fade" id="fightModal" data-backdrop="static" tabindex="-1" role="dialog">
+                    <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+                        <div id="english-fight-modal" class="modal-content">
+                            <div class="modal-header row pb-2">
+                                <div class="col-2 offset-8">
+                                    <button type="button" class="close start-fight" data-dismiss="modal">
+                                        <span>&times;</span>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="modal-body">
+                                <div class="row mb-0">
+                                    <div class="col">
+                                        <h1 class="modal-title">
+                                            <span class="fighting-player-name"></span>
+                                            commence le combat !
+                                        </h1>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="modal-footer row pb-2 mt-0">
+                                <div class="col modallang" data-dismiss="modal">
+                                    <button class="start-fight start-fight-btn">
+                                        GO !
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="french-fight-modal" class="modal-content">
+                            <div class="modal-header row pb-2">
+                                <div class="col-2 offset-8">
+                                    <button type="button" class="close start-fight" data-dismiss="modal">
+                                        <span>&times;</span>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="modal-body">
+                                <div class="row mb-0">
+                                    <div class="col">
+                                        <h1 class="modal-title">
+                                            <span class="fighting-player-name"></span>
+                                            ouvre le combat !
+                                        </h1>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="modal-footer row pb-2 mt-0">
+                                <div class="col modallang" data-dismiss="modal">
+                                    <button class="start-fight start-fight-btn">
+                                        C'est parti !
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- MODELE : VICTOIRE -->
+                <div class="modal fade" id="winnerModal" data-backdrop="static" tabindex="-1" role="dialog">
+                    <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+                        <div id="english-winner-modal" class="modal-content">
+                            <div class="modal-header row pb-2">
+                                <div class="col-2 offset-8">
+                                    <button type="button" class="close reload-btn" data-dismiss="modal">
+                                        <span>&times;</span>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="modal-body">
+                                <div class="row mb-0">
+                                    <div class="col">
+                                        <h1 class="modal-title">
+                                            <span class="winner-name"></span>
+                                            gagne la bataille !
+                                        </h1>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="modal-footer row pb-2 mt-0">
+                                <div class="col modallang" data-dismiss="modal">
+                                    <button class="start-fight-btn reload-btn">
+                                        Rejouer
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="french-winner-modal" class="modal-content">
+                            <div class="modal-header row pb-2">
+                                <div class="col-2 offset-8">
+                                    <button type="button" class="close reload-btn" data-dismiss="modal">
+                                        <span>&times;</span>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="modal-body">
+                                <div class="row mb-0">
+                                    <div class="col">
+                                            <span class="winner-name"></span>
+                                            gagne la bataille !
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="modal-footer row pb-2 mt-0">
+                                <div class="col modallang" data-dismiss="modal">
+                                    <button class="start-fight-btn reload-btn">
+                                        Rejouer
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        <!-- </div> -->
+        <!-- MES SCRIPTS JAVASCRIPT ( JQUERY / POOPER / BOOTSTRAP ETC ) -->
+        <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+        <script src="js/weapon.js"></script>
+        <script src="js/fight.js"></script>
+        <script src="js/move.js"></script>
+        <script src="js/player.js"></script>
+        <script src="js/cell.js"></script>
+        <script src="js/interface.js"></script>
+        <script src="js/map.js"></script>
+        <script src="js/mouseeffect.js"></script>
+        <script src="js/main.js"></script>
+    </body>
+</html>

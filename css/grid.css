@@ -1,0 +1,80 @@
+/* LA GRILLE / AVEC CSS GRID */
+
+/* ARMES */
+.weapon10 {
+    background-image: url(../img/knife.png);
+    background-size: cover;
+}
+
+.weapon20 {
+    background-image: url(../img/spade.png);
+    background-size: cover;
+}
+
+.weapon30 {
+    background-image: url(../img/sword.png);
+    background-size: cover;
+}
+
+.weapon40 {
+    background-image: url(../img/gun.png);
+    background-size: cover;
+}
+
+.weapon50 {
+    background-image: url(../img/axe.png);
+    background-size: cover;
+}
+
+/* JOUEURS ET OBSTACLES */
+.player1 {
+    background-image: url(../img/player1.png);
+    background-size: cover;
+}
+
+.player2 {
+    background-image: url(../img/player2.png);
+    background-size: cover;
+}
+
+.obstacle {
+    background-image: url(../img/obstacle.png);
+    background-size: cover;
+}
+
+/* GRILLE ET CELLULES */
+#grid {
+    margin: 0px;
+    margin-bottom: 20px;
+}
+
+.gridline {
+    display: flex;
+    justify-content: center;
+}
+
+.cell {
+    background-color: rgba(220, 157, 80, 0.4);
+    border-radius: 3px;
+    box-shadow: 1px 1px 2px rgb(220, 157, 80);
+    margin: 2px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    border: 2px solid #000;
+}
+
+.fight {
+    background-color: rgba(220, 157, 80, 0.4);
+    background-size: contain;
+    opacity: 0.7;
+}
+
+.cellstogo {
+    background-color: rgba(220, 157, 80, 0.7);
+}
+
+.cellstogo:hover {
+    background-color: rgb(220, 157, 80);
+}

@@ -1,0 +1,92 @@
+/* STYLE GLOBAL */
+body {
+    background-image: url(../img/bg-règles.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+h1, h2 {
+    margin: 2rem;
+    color: #f1f1f1;
+    text-align: center;
+    font-family: 'Goldman', cursive;
+}
+
+p {
+    font-size: 18px;
+    color: #f1f1f1;
+    text-align: center;
+    line-height: 2rem;
+    font-family: 'Goldman', cursive;
+}
+
+hr {
+    width: 10rem;
+}
+
+/* STYLE DES ARMES */
+.armes {
+    width: 50%;
+    margin: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.pistolet {
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+.sword {
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+.spade {
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+.knife {
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+.axe-img {
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+/* STYLE DES BOUTONS */
+#btn {
+    margin: 3rem;
+    display: flex;
+    justify-content: center;
+}
+
+#btn a {
+    text-decoration: none;
+    color: #000;
+}
+
+button {
+    width: 200px;
+    height: 50px;
+    border: none;
+    font-size: 14px;
+    outline: none;
+    color: #000;
+    background-color: #f1f1f1;
+    cursor: pointer;
+    border-radius: 10px;
+}
